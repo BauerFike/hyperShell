@@ -9,7 +9,6 @@
  *  0.4
  */
 (function($) {
-// custom select class
     function launchIntoFullscreen(element) {
         if (element.requestFullscreen) {
             element.requestFullscreen();
@@ -85,10 +84,7 @@
             t.grid.html(t.pageContent + t.curFolder + "\\\>" + t.linesContent[t.lineNr] + t.cursor);
             t.grid.attr("tabindex", -1).focus();
             $(document).keydown(function(e) {
-//                launchIntoFullscreen(document.documentElement);
                 keyCode = e.keyCode;
-//                if (keyCode >= 112 && keyCode <= 123)
-//                    return false;
                 if (keyCode == 9 || keyCode == 8 || keyCode == 40 || keyCode == 38 || keyCode == 13 || keyCode == 37 || keyCode == 39 || keyCode == 46) {
                     console.log("keydown");
                     e.preventDefault();
@@ -241,13 +237,11 @@
             }
             if (cmd === "cd") {
                 t.changeDirectory(command);
-//                t.printLn("a");
                 t.printContent("");
                 return false;
             }
             if (cmd === "cd..") {
                 t.changeDirectoryParent();
-//                t.printLn("");
                 t.printContent("");
                 return false;
             }
